@@ -1,0 +1,12 @@
+[package]
+name = "bot"
+version = "0.1.0"
+edition = "2018"
+[[bin]]
+name = "bot"
+path = "./bot.rs"
+test = false
+bench = false
+[dependencies]
+serenity = "0.8"
+stopwatch = "0.0.7"
