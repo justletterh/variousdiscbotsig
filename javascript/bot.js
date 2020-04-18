@@ -1,13 +1,15 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
+//part of the eval cmd
 function clean(text) {
 	if (typeof(text) === "string")
 		return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
 	else
 		return text;
 }
+//replace this with your id
 myid = "666317117154525185";
+//the on ready event, prints in the console and sets the status when the bot is logged in
 client.on('ready', () => {
 	client.user.setStatus('idle');
 	console.log(`We have logged in as ${client.user.tag}`);
@@ -17,6 +19,7 @@ client.on('ready', () => {
 	}, 0);
 });
 
+//the on message event, this is what tells the bot to respond to messages
 client.on('message', message => {
 	if (!message.guild) return;
 	if (message.content.startsWith('stopjs--')) {
@@ -25,12 +28,14 @@ client.on('message', message => {
 			client.destroy();
 		}, 0);
 	}
+	//kills the bot
 	if (message.content.startsWith('kys--')) {
 		message.channel.send("Bye! ***-javascript***");
 		setTimeout(() => {
 			client.destroy();
 		}, 0);
 	}
+	//kicks a member
 	if (message.content.startsWith('kick--')) {
 		const user = message.mentions.users.first();
 		if (user) {
@@ -52,6 +57,7 @@ client.on('message', message => {
 			message.channel.send("You didn't mention the user to kick!");
 		}
 	}
+	//bans a member
 	if (message.content.startsWith('ban--')) {
 		const user = message.mentions.users.first();
 		if (user) {
@@ -77,6 +83,7 @@ client.on('message', message => {
 	}
 	const args = message.content.split(" ").slice(1);
 
+	//runs js code
 	if (message.content.startsWith("js--")) {
 		if (message.author.id !== myid) return;
 		try {
@@ -93,6 +100,7 @@ client.on('message', message => {
 			message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
 		}
 	}
+	//displays latency
 	if (message.content.startsWith('ping--')) {
 		var h = client.users.cache.get(myid);
 		const embed = {
@@ -122,4 +130,5 @@ client.on('message', message => {
 	}
 });
 
+//runs the bot
 client.login('BOT-TOKEN-HERE');

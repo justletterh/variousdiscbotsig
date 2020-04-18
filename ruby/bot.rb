@@ -1,12 +1,15 @@
 require 'discordrb'
 require "discordrb/webhooks"
+#defines the bot, replace those two ids with whoever you want
 auth = 'BOT-TOKEN-HERE'
 bot = Discordrb::Bot.new token: auth
 myid = 666317117154525185
 lgsid = 575500747014144000
+#the ready event sets the status of the bot when it logs in
 bot.ready do
 bot.update_status("idle", nil, nil)
 end
+#displays the latency of the bot
 bot.message(with_text: 'ping--') do |event|
 m = event.respond('ping?')
 t = Time.now - event.timestamp
@@ -24,14 +27,17 @@ embed.color = "#592630"
 embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(url: curbot.avatar_url)
 end
 end
+#kills the bot
 bot.message(with_text: 'stopruby--') do |event|
 event.respond('i want to kill me too, dw :thumbsup:')
 exit
 end
+#also kills the bot
 bot.message(with_text: 'kys--') do |event|
 event.respond('Bye! ***-ruby***')
 exit
 end
+#creats a webhook, pretends to be a user and deletes the original message along with the webhook
 bot.message do |event|
 if event.message.author.id != myid and event.message.author.id != lgsid
 if event.message.content.start_with?('hook--')
@@ -58,4 +64,5 @@ Discordrb::API::Webhook.delete_webhook "Bot #{auth}",curwebhookobj.id
 end
 end
 end
+#runs the bot
 bot.run
