@@ -9,7 +9,7 @@ print('\033[37;1mM\033[31;1ma\033[33;1md\033[32;1me \033[34;1mb\033[36;1my \033[
 time.sleep(1)
 print('\033[35;1m------------------------------------------'+'\033[32;1m'+'['+'\033[31;1m'+'START'+'\033[32;1m'+']'+ '\033[m'+'\033[35;1m------------------------------------------\033[m')
 def py():
-    process = subprocess.Popen(['python3', '-u', 'bot.py'],
+    process = subprocess.Popen(['python3', '-u', 'python/bot.py'],
                                stdout=subprocess.PIPE,
                                universal_newlines=True)
     while True:
@@ -23,7 +23,7 @@ def py():
                 print('[\033[31;1mru\033[35;1mby\033[m] ', output.strip())
             break
 def rb():
-    process = subprocess.Popen(['ruby', 'bot.rb'],
+    process = subprocess.Popen(['ruby', 'ruby/bot.rb'],
                                stdout=subprocess.PIPE,
                                universal_newlines=True)
     while True:
@@ -37,7 +37,7 @@ def rb():
                 print('[\033[31;1mru\033[35;1mby\033[m] ', output.strip())
             break
 def js():
-    process = subprocess.Popen(['node', 'bot.js'],
+    process = subprocess.Popen(['node', 'javascript/bot.js'],
                                stdout=subprocess.PIPE,
                                universal_newlines=True)
     while True:
@@ -65,7 +65,7 @@ def ph():
                 print('[\033[34;1mp\033[30;1mh\033[34;1mp\033[m] ', output.strip())
             break
 def lu():
-    process = subprocess.Popen(['luvit', 'bot.lua'],
+    process = subprocess.Popen(['luvit', 'lua/bot.lua'],
                                stdout=subprocess.PIPE,
                                universal_newlines=True)
     while True:
@@ -79,7 +79,7 @@ def lu():
                 print('[\033[31;1ml\033[32;1mu\033[34;1ma\033[m] ', output.strip())
             break
 def go():
-    process = subprocess.Popen(['go', 'run', 'bot.go'],
+    process = subprocess.Popen(['go', 'run', 'golang/bot.go'],
                                stdout=subprocess.PIPE,
                                universal_newlines=True)
     while True:
@@ -93,7 +93,7 @@ def go():
                 print('[\033[36;1mg\033[32;1mo\033[m] ', output.strip())
             break
 def cr():
-    process = subprocess.Popen(['crystal', 'cr/bot.cr'],
+    process = subprocess.Popen(['crystal', 'crystal/bot.cr'],
                                stdout=subprocess.PIPE,
                                universal_newlines=True)
     while True:
@@ -107,7 +107,7 @@ def cr():
                 print('[\033[31;1mcry\033[33;1ms\033[30;1mtal\033[m] ', output.strip())
             break
 def vb():
-    process = subprocess.Popen(['cd vb/Example1&&dotnet run'],
+    process = subprocess.Popen(['cd visualbasic/Example1&&dotnet run'],
                                stdout=subprocess.PIPE,
                                universal_newlines=True,
                                shell=True)
