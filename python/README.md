@@ -1,6 +1,7 @@
 # dependancies
 this bot uses discord.py
-* ## [discord.py git](https://github.com/Rapptz/discord.py)
+* ## discord.py
+  [git](https://github.com/Rapptz/discord.py)
   ```
       # Linux/macOS
       python3 -m pip install -U discord.py
