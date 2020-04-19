@@ -9,3 +9,8 @@ this bot uses discord.py
       # Windows
       py -3 -m pip install -U discord.py
   ```
+* ## jishaku
+  [git](https://github.com/Gorialis/jishaku)
+  ```
+      python3 -m pip install -U jishaku
+  ```
