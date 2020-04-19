@@ -1,3 +1,3 @@
 # dependancies
 this bot uses discord.py
-https://github.com/Rapptz/discord.py
+[discord.py git](https://github.com/Rapptz/discord.py)
