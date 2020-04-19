@@ -1,7 +1,6 @@
 # dependencies
-  ## discordcr
+* ## discordcr
     [git](https://github.com/discordcr/discordcr)
-    Add this to your application's shard.yml:
     ```yaml
     dependencies:
       discordcr:
